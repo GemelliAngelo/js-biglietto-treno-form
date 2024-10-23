@@ -16,11 +16,43 @@
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
+  <body class="bg-secondary">
     <div class="container">
-      <input type="text" id="name" />
-      <input type="text" id="distance" />
-      <button type="button" class="btn">Genera</button>
+      <h1 class="text-center py-5">BIGLIETTO TRENO</h1>
+      <div class="d-flex align-items-center justify-content-center py-5">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label fw-bold"
+              >Inserisci il tuo Nome</label
+            >
+            <input type="text" class="form-control" id="name" />
+          </div>
+          <div class="col-md-6">
+            <label for="surname" class="form-label fw-bold"
+              >Inserisci il tuo Cognome</label
+            >
+            <input type="text" class="form-control" id="surname" />
+          </div>
+          <div class="col-6">
+            <label for="age" class="form-label fw-bold"
+              >Inserisci la tua età</label
+            >
+            <input type="text" class="form-control" id="age" />
+          </div>
+          <div class="col-6">
+            <label for="distance" class="form-label fw-bold"
+              >Inserisci i chilometri che vuoi percorrere</label
+            >
+            <input type="text" class="form-control fw-bold" id="distance" />
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary fw-bold">
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
     <!-- BOOTSTRAP JS -->
     <script
