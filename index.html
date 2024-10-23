@@ -20,7 +20,7 @@
     <div class="container">
       <h1 class="text-center py-5">BIGLIETTO TRENO</h1>
       <div class="d-flex align-items-center justify-content-center py-5">
-        <form class="row g-3">
+        <form class="row g-4 mx-3">
           <div class="col-md-6">
             <label for="name" class="form-label fw-bold"
               >Inserisci il tuo Nome</label
@@ -33,25 +33,58 @@
             >
             <input type="text" class="form-control" id="surname" />
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <label for="age" class="form-label fw-bold"
               >Inserisci la tua età</label
             >
             <input type="text" class="form-control" id="age" />
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <label for="distance" class="form-label fw-bold"
               >Inserisci i chilometri che vuoi percorrere</label
             >
             <input type="text" class="form-control fw-bold" id="distance" />
           </div>
 
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary fw-bold">
-              Sign in
+          <div class="col-md-6 text-end">
+            <button
+              type="button"
+              class="btn btn-success fw-bold p-3"
+              id="generate-button"
+            >
+              GENERA
+            </button>
+          </div>
+          <div class="col-md-6">
+            <button
+              type="button"
+              class="btn btn-outline-danger fw-bold p-3"
+              id="undo-button"
+            >
+              ANNULLA
             </button>
           </div>
         </form>
+      </div>
+      <div class="d-flex">
+        <div class="card mb-3 w-100">
+          <div class="row g-0">
+            <div class="col-md-4 bg-success-subtle">
+              <h2 id="fullname" class="text-center align-middle"></h2>
+            </div>
+            <div class="col-md-8 bg-primary-subtle">
+              <div class="card-body text-center">
+                <h2 class="card-title">Il Tuo Biglietto</h2>
+                <p class="card-text">Prezzo:</p>
+                <p class="card-text">
+                  <small class="text-body-secondary"
+                    >Last updated 3 mins ago</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- BOOTSTRAP JS -->
