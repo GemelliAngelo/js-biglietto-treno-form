@@ -1,9 +1,7 @@
 const nameinput = document.getElementById("name");
 const surnameinput = document.getElementById("surname");
 const distanceinput = document.getElementById("distance");
-const distance = parseInt(distanceinput.value);
 const ageinput = document.getElementById("age");
-const age = parseInt(ageinput.value);
 
 const generateButton = document.getElementById("generate-button");
 const undoButton = document.getElementById("undo-button");
@@ -21,17 +19,21 @@ generateButton.addEventListener("click", () => {
     return;
   }
 
-  if (distance < 1 || isNaN(distance)) {
+  if (
+    parseInt(distanceinput.value) < 1 ||
+    isNaN(parseInt(distanceinput.value))
+  ) {
     distanceinput.classList.add("is-invalid");
     return;
   }
 
-  if (isNaN(age)) {
+  if (parseInt(ageinput.value) < 1 || isNaN(parseInt(ageinput.value))) {
     ageinput.classList.add("is-invalid");
     return;
   }
 
   let ticketPrice = parseInt(distanceinput.value) * pricePerKm;
+
   if (age < 18) {
     ticketPrice = ticketPrice - ticketPrice * 0.2;
   } else if (age >= 65) {
@@ -40,9 +42,10 @@ generateButton.addEventListener("click", () => {
   document.getElementById(
     "price-display"
   ).innerHTML += `€ ${ticketPrice.toFixed(2)}`;
-  document.getElementById("train-info").innerHTML += Math.floor(
-    Math.random() * 15 + 1
-  );
+  document.getElementById("train-info").innerHTML +=
+    Math.floor(Math.random() * 15) + 1;
+  document.getElementById("ticket-cp").innerHTML +=
+    Math.floor(Math.random() * 1000000) + 100000;
   fullName.innerHTML = nameinput.value + " " + surnameinput.value;
 });
 
