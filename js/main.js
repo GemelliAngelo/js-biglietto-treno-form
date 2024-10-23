@@ -14,6 +14,8 @@ generateButton.addEventListener("click", () => {
   } else if (parseInt(ageinput.value) >= 65) {
     ticketPrice = ticketPrice - ticketPrice * 0.4;
   }
-  //   document.getElementById("price").innerHTML = `€ ${ticketPrice.toFixed(2)}`;
+  document.getElementById(
+    "price-display"
+  ).innerHTML += `€ ${ticketPrice.toFixed(2)}`;
   fullName.innerHTML = nameinput.value + " " + surnameinput.value;
 });
