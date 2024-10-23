@@ -19,7 +19,9 @@
   <body class="bg-secondary">
     <div class="container">
       <h1 class="text-center py-5">BIGLIETTO TRENO</h1>
-      <div class="d-flex align-items-center justify-content-center py-5">
+      <div
+        class="d-flex justify-content-center py-4 my-3 border border-warning bg-info-subtle"
+      >
         <form class="row g-4 mx-3">
           <div class="col-md-6">
             <label for="name" class="form-label fw-bold"
@@ -43,7 +45,7 @@
             <label for="distance" class="form-label fw-bold"
               >Inserisci i chilometri che vuoi percorrere</label
             >
-            <input type="text" class="form-control fw-bold" id="distance" />
+            <input type="number" class="form-control fw-bold" id="distance" />
           </div>
 
           <div class="col-md-6 text-end">
@@ -58,7 +60,7 @@
           <div class="col-md-6">
             <button
               type="button"
-              class="btn btn-outline-danger fw-bold p-3"
+              class="btn btn-danger fw-bold p-3"
               id="undo-button"
             >
               ANNULLA
@@ -67,17 +69,27 @@
         </form>
       </div>
       <div class="d-flex">
-        <div class="card mb-3 w-100">
+        <div class="card mb-3 w-100 border border-success">
           <div class="row g-0">
-            <div class="col-md-4 bg-success-subtle">
-              <h2 id="fullname" class="text-center"></h2>
+            <div class="col-md-4 bg-info">
+              <h2 id="fullname" class="text-center align-middle py3"></h2>
             </div>
-            <div class="col-md-8 bg-primary-subtle">
-              <div class="card-body text-center">
-                <h2 class="card-title fw-bold">Il Tuo Biglietto</h2>
-                <p class="card-text" id="price-display">Prezzo biglietto:</p>
-                <p class="card-text">
-                  <small class="text-body-secondary">Biglietto Standard</small>
+            <div class="col-md-8 bg-warning">
+              <div class="card-body">
+                <h2 class="card-title text-center fw-bold">Il Tuo Biglietto</h2>
+                <h3 class="card-text text-center" id="price-display">
+                  Prezzo:
+                </h3>
+                <p class="card-text d-inline fw-bold" id="train-info">
+                  Carrozza:
+                </p>
+                <p class="card-text text-end fw-bold" id="ticket-cp">
+                  Codice CP:
+                </p>
+                <p class="card-text text-center">
+                  <small class="text-body-secondary fw-bold"
+                    >Biglietto Standard</small
+                  >
                 </p>
               </div>
             </div>
