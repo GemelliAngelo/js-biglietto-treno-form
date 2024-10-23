@@ -1,23 +1,40 @@
 const nameinput = document.getElementById("name");
 const surnameinput = document.getElementById("surname");
-const distanceinput = parseInt(document.getElementById("distance"));
-const ageinput = parseInt(document.getElementById("age"));
+const distanceinput = document.getElementById("distance");
+const distance = parseInt(distanceinput.value);
+const ageinput = document.getElementById("age");
+const age = parseInt(ageinput.value);
+
 const generateButton = document.getElementById("generate-button");
 const undoButton = document.getElementById("undo-button");
 const fullName = document.getElementById("fullname");
 const pricePerKm = 0.21;
 
 generateButton.addEventListener("click", () => {
-  if (nameinput.value.length < 3 || surnameinput.value.length < 3) return;
+  if (nameinput.value.length < 3) {
+    nameinput.classList.add("is-invalid");
+    return;
+  }
 
-  if (distanceinput.value < 1 || ageinput.value < 1) return;
+  if (surnameinput.value.length < 3) {
+    surnameinput.classList.add("is-invalid");
+    return;
+  }
 
-  if (isNaN(distanceinput.value) || isNaN(ageinput.value)) return;
+  if (distance < 1 || isNaN(distance)) {
+    distanceinput.classList.add("is-invalid");
+    return;
+  }
+
+  if (isNaN(age)) {
+    ageinput.classList.add("is-invalid");
+    return;
+  }
 
   let ticketPrice = parseInt(distanceinput.value) * pricePerKm;
-  if (parseInt(ageinput.value) < 18) {
+  if (age < 18) {
     ticketPrice = ticketPrice - ticketPrice * 0.2;
-  } else if (parseInt(ageinput.value) >= 65) {
+  } else if (age >= 65) {
     ticketPrice = ticketPrice - ticketPrice * 0.4;
   }
   document.getElementById(
@@ -27,15 +44,6 @@ generateButton.addEventListener("click", () => {
     Math.random() * 15 + 1
   );
   fullName.innerHTML = nameinput.value + " " + surnameinput.value;
-
-  nameinput.value = "";
-  surnameinput.value = "";
-  distanceinput.value = "";
-  ageinput.value = "";
-  generateButton.value = "";
-  undoButton.value = "";
-  fullName.value = "";
-  pricePerKm.value = "";
 });
 
 undoButton.addEventListener("click", () => {
