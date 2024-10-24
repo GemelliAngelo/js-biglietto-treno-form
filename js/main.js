@@ -45,7 +45,7 @@ generateButton.addEventListener("click", () => {
   document.getElementById("train-info").innerHTML +=
     Math.floor(Math.random() * 15) + 1;
   document.getElementById("ticket-cp").innerHTML +=
-    Math.floor(Math.random() * 1000000) + 100000;
+    Math.floor(Math.random() * 900001) + 100000;
   fullName.innerHTML = nameinput.value + " " + surnameinput.value;
 });
 
